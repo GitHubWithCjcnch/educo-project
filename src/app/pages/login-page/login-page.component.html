@@ -1,0 +1,21 @@
+<div class="min-vh-100 position-relative d-flex justify-content-center align-items-center container-background">
+    <div class="grid-container position-absolute login-form">
+        <div class="d-flex align-items-center top-0 start-0">
+            <form 
+                [formGroup]="loginForm" 
+                (ngSubmit)="onSubmit()"
+                class="mx-auto w-75 d-flex flex-column"
+            >
+                <input id="email" type="text" placeholder="Email Adress" formControlName="email">
+                <input id="password" type="text" placeholder="Password" formControlName="password">
+                <button class="btn btn-secondary" type="submit" [disabled]="!loginForm.valid">Login</button>
+            </form>
+        </div>
+        <div 
+            class="d-flex align-items-center end-0"
+            style="background-color:#EDF4FF !important;"
+            >
+            <img class="w-100 mt-auto" src="../../../assets/backgrounds/loginForm-background_animated.svg">
+        </div>
+    </div>
+</div>

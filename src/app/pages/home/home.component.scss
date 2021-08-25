@@ -1,0 +1,77 @@
+.container-anim {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    background-image: url('../../../assets/test.svg');
+    background-position: 0 300px;
+    animation: anim 10s linear infinite;
+    background-repeat: repeat-x;
+    background-color: #1C63B6;
+    z-index: -2;
+}
+
+@keyframes anim{
+	0%{background-position: 0 0;}
+	50%{background-position: 100vw 0;}
+	100%{background-position: 0 0;}
+}
+
+.container-anim::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    right: calc(100% - 50px);
+    height: inherit;
+    background: linear-gradient(90deg, rgb(28, 99, 182), transparent);
+}
+
+.container-anim::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    left: calc(100% - 50px);
+    height: inherit;
+    background: linear-gradient(90deg, transparent, rgb(28, 99, 182));
+}
+
+.main-content {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-container {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.superman-judite {
+    animation: breath-anim 7s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes breath-anim {
+    0% { transform: scale(0.9) }
+    25% { transform: scale(1) }
+    60% { transform: scale(0.9) }
+    100% { transform: scale(0.9) }
+}
+
+.top-title {
+    transform: translateY(0.7em);
+    z-index: -1;
+}
+
+.bottom-title {
+    transform: translateY(-1em);
+    z-index: 1;  
+}

@@ -1,0 +1,40 @@
+.container-background {
+    background: url('../../../assets/backgrounds/login-background.svg') no-repeat;
+    background-size: cover;
+}
+
+.login-form {
+    width: 64%;
+    height: 83.3%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 3fr;
+}
+
+
+#email, #password {
+    border-radius: 0.3em;
+    outline: none;
+    border: 1px #ECEEF2 solid;
+    padding: 10px 0;
+    margin-bottom: 1em;
+    text-indent: 3rem;
+}
+
+#email {
+    background: url('../../../assets/icons/educo-icon.svg') no-repeat 5px/50%;
+    background-size: 1.5em;
+}
+
+#password {
+    background: url('../../../assets/icons/lock-icon.svg') no-repeat 5px/50%;
+    background-size: 1.5em;
+}
+
+#email::placeholder, #password::placeholder {
+    color: #ADB3BC;
+}
