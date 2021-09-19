@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './utilitiesComponents/header/header.component';
-import { DownloadPageComponent } from './pages/download-page/download-page.component';
+import { DownloadPageComponent } from './utilitiesComponents/download-page/download-page.component';
+import { LoginInputDirective } from './directives/login-input.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DownloadPageComponent } from './pages/download-page/download-page.compo
     LoginPageComponent,
     HomeComponent,
     HeaderComponent,
-    DownloadPageComponent
+    DownloadPageComponent,
+    LoginInputDirective
   ],
   imports: [
     BrowserModule,

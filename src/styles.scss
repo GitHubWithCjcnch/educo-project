@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+
+@font-face {
+    font-family: 'Righteous-Regular';
+    src: url("./assets/fonts/Righteous-Regular.ttf");
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -10,5 +16,27 @@ html, body {
     min-height: 100vh;
     height: auto;
     margin: 0;
+    overflow-x: hidden;
+    overflow: overlay;
+}
+
+html::-webkit-scrollbar{
+    width: 16px;
 }
   
+html::-webkit-scrollbar-track {
+    border-left: 8px solid #094067;
+    border-right: 8px solid #094067;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #ef4565;
+    border-left: 4px solid #094067;
+    border-right: 4px solid #094067;
+    border-bottom: 4px solid #094067;
+    border-top: 4px solid #094067;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}

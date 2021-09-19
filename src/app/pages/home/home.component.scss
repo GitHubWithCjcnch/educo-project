@@ -3,9 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height: 85vh;
     background-image: url('../../../assets/test.svg');
-    background-position: 0 300px;
     animation: anim 10s linear infinite;
     background-repeat: repeat-x;
     background-color: #1C63B6;
@@ -13,9 +12,9 @@
 }
 
 @keyframes anim{
-	0%{background-position: 0 0;}
-	50%{background-position: 100vw 0;}
-	100%{background-position: 0 0;}
+	0%{background-position: center;}
+	50%{background-position: 100vw center;}
+	100%{background-position: center;}
 }
 
 .container-anim::after {
@@ -45,12 +44,12 @@
 }
 
 .title-container {
-    font-family: 'Trebuchet MS', sans-serif;
+    font-family: 'Righteous-Regular';
     font-style: normal;
     font-weight: 600;
     font-size: 64px;
-    letter-spacing: 0.1em;
-    color: #FFFFFF;
+    letter-spacing: 2.5px;
+    color: #fffffe;
     white-space: nowrap;
 }
 

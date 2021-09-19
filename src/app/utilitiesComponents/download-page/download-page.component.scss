@@ -1,0 +1,59 @@
+section {
+    display: block;
+    background-color: #fffffe;
+    padding: 100px 15px 104px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.CenteredFlexItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FlexContainerSection {
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.DownloadComputer_DownloadIcon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;    
+}
+
+.TextStyle {
+    font-family: 'Righteous-Regular';
+    font-weight: 500;
+    color: #5f6c7b;
+    margin-top: 7px;
+    text-align: start;
+}
+
+.BtnStyle {
+    padding: 16px 32px;
+    background-color: #349afa;
+    color: #fffffe;
+    font-weight: 700;
+    font-size: medium;
+    border: none;
+    border-radius: 3em;
+    transition: .4s;
+}
+
+.BtnStyle:hover {
+    box-shadow: 8px 3px black;
+    color: black;
+}
+
+
+

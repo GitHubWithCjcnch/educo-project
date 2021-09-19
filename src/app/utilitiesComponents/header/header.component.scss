@@ -1,12 +1,10 @@
 header {
     max-height: 4.5rem;
-    width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
-    background: black;
 }
 
 header .container-img {
@@ -42,21 +40,22 @@ header .container-img img {
 .nav-41rtp ul li a {
     display: block;
     font-family: 'Trebuchet MS', sans-serif;
-    color: white;
+    color: #fffffe;
     font-style: normal;
     font-weight: 700;
     font-size: 1.1rem;
     text-decoration: none;
     outline: none;
+    transition: 0.3s;
     
 }
 
 .nav-41rtp ul li a:hover {
-    color: #80d7ff;
+    color: #3da9fc;
 }
 
 .separator {
     width: 2px;
     height: 30px;
-    background-color: white;
+    background-color: #fffffe;
 }
