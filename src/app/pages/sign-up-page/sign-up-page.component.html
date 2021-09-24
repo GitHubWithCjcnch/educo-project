@@ -1,0 +1,126 @@
+<main class="main-container vh-100 min-vw-100 container">
+    <app-progress-bar></app-progress-bar>
+    <div class="login-form row col-md-6">
+        <img
+            src="../../../assets/backgrounds/static_backgrounds/JuditRegister.svg" 
+            class="row col-md-5 position-absolute top-50 start-0 translate-middle"
+        >
+        <div class="col position-relative d-flex align-items-center top-0 start-0">
+            <form                
+                class="container mx-auto mt-5"
+            >
+                <div *ngIf="sharedService.steps === 1">
+                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 text-center">
+                        <h1>Comece a sua jornada no Educo!</h1>
+                        <span>Primeiro precisamos do seu endereço do E-mail</span>
+                    </header>
+                    <div class="col-md-6">
+                        <div class="div-input" id="email">
+                            <span class="position-absolute top-50 start-0 translate-middle-y">Insira o e-mail aqui</span>
+                            <input class="text-input" type="text">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <button
+                                type="button"
+                                *ngIf="sharedService.steps === 1"
+                                on-click="nextStep()"
+                                class="col-md-6 btn-login text-center mx-auto"
+                            >Próximo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="sharedService.steps === 2">
+                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x mx-auto text-center" style="margin-top: 7rem;">
+                        <h1>Quando você nasceu?</h1>
+                    </header>
+                    <div class="col">
+                        <div class="col-md-6 div-input mx-auto" id="email">
+                            <input class="text-input date-format" type="date">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <button
+                                type="button"
+                                *ngIf="sharedService.steps === 2"
+                                on-click="nextStep()"
+                                class="col-md-6 btn-login text-center mx-auto"
+                            >Próximo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="sharedService.steps === 3">
+                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 mx-auto text-center">
+                        <h1 class="">Agora, crie um nome de usuário e uma senha</h1>
+                    </header>
+                    <div class="col">
+                        <div class="col-md-6 div-input mx-auto" id="email">
+                            <span class="position-absolute top-50 start-0 translate-middle-y">Nome Completo</span>
+                            <input class="text-input" type="text" name="name">
+                        </div>
+                        <div class="col-md-6 div-input mx-auto" id="email">
+                            <span class="position-absolute top-50 start-0 translate-middle-y">Senha</span>
+                            <input class="text-input" type="password" name="password">
+                        </div>
+                        <div class="col-md-6 div-input mx-auto" id="email">
+                            <span class="position-absolute top-50 start-0 translate-middle-y">Confirme a Senha</span>
+                            <input class="text-input" type="password" name="confirm_password">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <button
+                                type="button"
+                                *ngIf="sharedService.steps === 3"
+                                on-click="nextStep()"
+                                class="col-md-6 btn-login text-center mx-auto"
+                            >Próximo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="sharedService.steps === 4">
+                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 mx-auto text-center">
+                        <h1>Por fim, adicione uma foto</h1>
+                        <span>e nos conte mais sobre você e adicione uma foto de perfil.</span> 
+                    </header>
+                    <div class="col-md-6 div-input mx-auto" id="email">
+                        <input type="file" multiple accept=".jpg,.jpeg,.png.gif">
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <button
+                                type="button"
+                                *ngIf="sharedService.steps === 4"
+                                on-click="nextStep()"
+                                class="col-md-6 btn-login text-center mx-auto"
+                            >Próximo</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div *ngIf="sharedService.steps === 5">
+                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 mx-auto text-center">
+                        <h1>test 5</h1>
+                        <span>Primeiro precisamodaseço do E-mail</span>
+                    </header>
+                    <div class="col">
+                        <div class="col-md-6 div-input mx-auto" id="email">
+                            <input type="file" multiple accept=".jpg,.jpeg,.png.gif">
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <button class="col-md-6 btn-login text-center mx-auto">Próximo</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

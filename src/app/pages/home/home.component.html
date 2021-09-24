@@ -6,4 +6,13 @@
         <span class="title-container bottom-title">É PODER</span>
     </div>
 </main>
-<app-download-page></app-download-page>
+<div *ngFor="let data of articles">
+    <app-download-page [article]="data"></app-download-page>
+</div>
+
+<div class="d-flex gap-3 flex-wrap justify-content-evenly" style="width: 100%;">
+    <a class="BtnStyle">
+        <img class="DownloadComputer_DownloadIcon me-3" src="../../../assets/icons/download_black_24dp.svg">Baixar para Windows
+    </a>
+    <a class="BtnStyle" style="background-color: #ef4565 !important;">Use o Educo no Navegador</a>
+</div>

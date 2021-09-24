@@ -40,3 +40,10 @@ html::-webkit-scrollbar-thumb {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
 }
+
+.main-container {
+    position: fixed;
+    background: url('./assets/backgrounds/animated_backgrounds/LoginFormBackground_animated.svg') no-repeat;
+    background-size: cover;
+    overflow-y: auto;
+}

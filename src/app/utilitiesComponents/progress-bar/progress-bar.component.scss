@@ -1,0 +1,46 @@
+div>div.progress, div>div.progress>div.progress-bar {
+    border-radius: 5em;
+}
+
+div>div.progress> {
+    div.progress-25 {
+        animation: progress25 1s;
+    }
+
+    div.progress-50 {
+        animation: progress50 1s;
+    }
+
+    div.progress-75 {
+        animation: progress75 1s;
+    }
+
+    div.progress-100 {
+        animation: progress100 1s;
+    }
+}
+
+@keyframes progress25 {
+    0% {
+        width: 0;
+    }
+}
+
+@keyframes progress50 {
+    0% {
+        width: 25%;
+    }
+}
+
+@keyframes progress75 {
+    0% {
+        width: 50%;
+    }
+}
+
+@keyframes progress100 {
+    0% {
+        width: 75%;
+    }
+}
+

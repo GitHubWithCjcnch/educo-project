@@ -1,18 +1,13 @@
 <main class="vw-100">
-    <section>
-        <div class="CenteredFlexItem">
-            <div class="FlexContainerSection">
-                <p class="TextStyle fs-1" style="color: #094067 !important">Esteja com quem tem o mesmo conhecimento que você</p>
+    <section class="container">
+        <div class="row gap-4">
+            <div class="col">
+                <p class="TextStyle fs-1" style="color: #094067 !important">{{article.title}}</p>
                 <p class="TextStyle fs-5">
-                    E estude com diversos outros estudantes online. Através das comunidades, interaja e se divirta, com as atividades que são criadas pelos seus colegas de servidor
+                    {{article.description}}
                 </p>
             </div>
-            <div class="d-flex justify-content-evenly align-items-center mt-5" style="width: 45vw;">
-                <a class="BtnStyle">
-                    <img class="DownloadComputer_DownloadIcon" src="../../../assets/icons/download_black_24dp.svg">Baixar para Windows
-                </a>
-                <a class="BtnStyle" style="background-color: #ef4565 !important;">Use o Educo no Navegador</a>
-            </div>
+            <img class="col" src={{article.image}}>
         </div>
     </section>
 </main>

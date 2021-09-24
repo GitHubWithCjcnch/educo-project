@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { DownloadPageComponent } from './utilitiesComponents/download-page/download-page.component';
+import { signInPageComponent } from './pages/sign-in-page/sign-in-page.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 
 const routes: Routes = [
   {
@@ -15,13 +15,13 @@ const routes: Routes = [
     component: HomeComponent 
   },
   {
-    path: 'login',
-    component: LoginPageComponent
+    path: 'signin',
+    component: signInPageComponent
   },
   {
-    path: 'download',
-    component: DownloadPageComponent
-  }
+    path: 'signup',
+    component: SignUpPageComponent
+  },
 ];
 
 @NgModule({

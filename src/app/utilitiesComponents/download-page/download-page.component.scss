@@ -4,24 +4,12 @@ section {
     padding: 100px 15px 104px;
 }
 
-a {
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .CenteredFlexItem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.FlexContainerSection {
-    width: 30%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 0.3fr 0.2fr;
 }
 
 .DownloadComputer_DownloadIcon {
@@ -38,22 +26,3 @@ a {
     margin-top: 7px;
     text-align: start;
 }
-
-.BtnStyle {
-    padding: 16px 32px;
-    background-color: #349afa;
-    color: #fffffe;
-    font-weight: 700;
-    font-size: medium;
-    border: none;
-    border-radius: 3em;
-    transition: .4s;
-}
-
-.BtnStyle:hover {
-    box-shadow: 8px 3px black;
-    color: black;
-}
-
-
-

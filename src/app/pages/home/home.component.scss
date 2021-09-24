@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .container-anim {
     position: relative;
     display: flex;
@@ -11,8 +16,9 @@
     z-index: -2;
 }
 
+
 @keyframes anim{
-	0%{background-position: center;}
+    0%{background-position: center;}
 	50%{background-position: 100vw center;}
 	100%{background-position: center;}
 }
@@ -73,4 +79,21 @@
 .bottom-title {
     transform: translateY(-1em);
     z-index: 1;  
+}
+
+.BtnStyle {
+    padding: 16px 32px;
+    background-color: #349afa;
+    color: #fffffe;
+    font-family: 'Righteous-Regular';
+    font-weight: 500;
+    font-size: medium;
+    border: none;
+    border-radius: 3em;
+    transition: .4s;
+}
+
+.BtnStyle:hover {
+    box-shadow: 8px 3px black;
+    color: black;
 }
