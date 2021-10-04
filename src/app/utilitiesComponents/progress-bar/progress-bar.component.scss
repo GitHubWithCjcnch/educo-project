@@ -1,22 +1,72 @@
+@media (max-width: 768px) {
+    .exitButton {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 div>div.progress, div>div.progress>div.progress-bar {
     border-radius: 5em;
 }
 
-div>div.progress> {
+.exitButton {
+    width: 48px;
+    height: 48px;
+    margin-top: 1.85rem;
+    cursor: pointer;
+
+    a>svg, a>svg>path {
+        transition: .3s;
+    }
+
+    a>svg:hover {
+        path {
+            fill: #fffffe;
+        }
+    }
+
+    a>svg:active {
+        transform: scale(0.8);
+        transform-origin: 50% 50%;
+    }
+}
+
+.colorProgress {
+    background: white !important;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+		box-shadow: 8px 3px #5f6c7b;
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 12px 6px #5f6c7b;
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 8px 3px #5f6c7b;
+		transform: translatey(0px);
+	}
+}
+
+
+div.container>div.progress> {
+    div.progress-bar {
+        background: #3da9fc;
+        box-shadow:  0 1px 10px 1px #3da9fc;
+    }
+
     div.progress-25 {
         animation: progress25 1s;
     }
 
-    div.progress-50 {
-        animation: progress50 1s;
+    div.progress-33 {
+        animation: progress33 1s;
     }
 
-    div.progress-75 {
-        animation: progress75 1s;
-    }
-
-    div.progress-100 {
-        animation: progress100 1s;
+    div.progress-70 {
+        animation: progress70 1s;
     }
 }
 
@@ -26,21 +76,15 @@ div>div.progress> {
     }
 }
 
-@keyframes progress50 {
+@keyframes progress33 {
     0% {
-        width: 25%;
+        width: 33%;
     }
 }
 
-@keyframes progress75 {
+@keyframes progress70 {
     0% {
-        width: 50%;
-    }
-}
-
-@keyframes progress100 {
-    0% {
-        width: 75%;
+        width: 70%;
     }
 }
 

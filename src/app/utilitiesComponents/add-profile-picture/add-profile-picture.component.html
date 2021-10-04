@@ -1,0 +1,7 @@
+<div #imageProfile class="mx-auto backgroundDefault">
+  <div class="w-100 h-100 position-relative">
+      <label class="position-absolute end-0 bottom-0" for="add-image"></label>
+  </div>
+  <input id="add-image" type="file" multiple accept=".jpg,.jpeg,.png.gif"
+      formControlName="picture" (change)="handleFileInput($event)" />
+</div>

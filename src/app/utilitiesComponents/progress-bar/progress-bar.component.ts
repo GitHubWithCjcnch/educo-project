@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedServiceService } from 'src/app/shared/shared-service.service';
+import { SharedServiceService } from 'src/app/services/shared-service.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-progress-bar',
@@ -8,9 +9,16 @@ import { SharedServiceService } from 'src/app/shared/shared-service.service';
 })
 export class ProgressBarComponent implements OnInit {
 
-  constructor(public sharedService: SharedServiceService) { }
+  constructor(
+      public sharedService: SharedServiceService,
+      private location: Location
+    ) { }
 
   ngOnInit(): void {
   }
 
+  exitSignUp() {
+    this.sharedService.steps = 1;
+    this.location.back()
+  }
 }

@@ -12,4 +12,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  scrollInto() {
+    document.querySelector('#downloadSection')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    document.querySelector('#SupportSection')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
 }

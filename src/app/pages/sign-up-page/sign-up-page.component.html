@@ -1,126 +1,186 @@
 <main class="main-container vh-100 min-vw-100 container">
-    <app-progress-bar></app-progress-bar>
-    <div class="login-form row col-md-6">
-        <img
-            src="../../../assets/backgrounds/static_backgrounds/JuditRegister.svg" 
-            class="row col-md-5 position-absolute top-50 start-0 translate-middle"
-        >
-        <div class="col position-relative d-flex align-items-center top-0 start-0">
-            <form                
-                class="container mx-auto mt-5"
-            >
-                <div *ngIf="sharedService.steps === 1">
-                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 text-center">
-                        <h1>Comece a sua jornada no Educo!</h1>
-                        <span>Primeiro precisamos do seu endereço do E-mail</span>
-                    </header>
-                    <div class="col-md-6">
-                        <div class="div-input" id="email">
-                            <span class="position-absolute top-50 start-0 translate-middle-y">Insira o e-mail aqui</span>
-                            <input class="text-input" type="text">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <button
-                                type="button"
-                                *ngIf="sharedService.steps === 1"
-                                on-click="nextStep()"
-                                class="col-md-6 btn-login text-center mx-auto"
-                            >Próximo</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div *ngIf="sharedService.steps === 2">
-                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x mx-auto text-center" style="margin-top: 7rem;">
-                        <h1>Quando você nasceu?</h1>
-                    </header>
-                    <div class="col">
-                        <div class="col-md-6 div-input mx-auto" id="email">
-                            <input class="text-input date-format" type="date">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <button
-                                type="button"
-                                *ngIf="sharedService.steps === 2"
-                                on-click="nextStep()"
-                                class="col-md-6 btn-login text-center mx-auto"
-                            >Próximo</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div *ngIf="sharedService.steps === 3">
-                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 mx-auto text-center">
-                        <h1 class="">Agora, crie um nome de usuário e uma senha</h1>
-                    </header>
-                    <div class="col">
-                        <div class="col-md-6 div-input mx-auto" id="email">
-                            <span class="position-absolute top-50 start-0 translate-middle-y">Nome Completo</span>
-                            <input class="text-input" type="text" name="name">
-                        </div>
-                        <div class="col-md-6 div-input mx-auto" id="email">
-                            <span class="position-absolute top-50 start-0 translate-middle-y">Senha</span>
-                            <input class="text-input" type="password" name="password">
-                        </div>
-                        <div class="col-md-6 div-input mx-auto" id="email">
-                            <span class="position-absolute top-50 start-0 translate-middle-y">Confirme a Senha</span>
-                            <input class="text-input" type="password" name="confirm_password">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <button
-                                type="button"
-                                *ngIf="sharedService.steps === 3"
-                                on-click="nextStep()"
-                                class="col-md-6 btn-login text-center mx-auto"
-                            >Próximo</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div *ngIf="sharedService.steps === 4">
-                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 mx-auto text-center">
-                        <h1>Por fim, adicione uma foto</h1>
-                        <span>e nos conte mais sobre você e adicione uma foto de perfil.</span> 
-                    </header>
-                    <div class="col-md-6 div-input mx-auto" id="email">
-                        <input type="file" multiple accept=".jpg,.jpeg,.png.gif">
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <button
-                                type="button"
-                                *ngIf="sharedService.steps === 4"
-                                on-click="nextStep()"
-                                class="col-md-6 btn-login text-center mx-auto"
-                            >Próximo</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div *ngIf="sharedService.steps === 5">
-                    <header class="col-md-6 position-absolute top-0 start-50 translate-middle-x my-5 mx-auto text-center">
-                        <h1>test 5</h1>
-                        <span>Primeiro precisamodaseço do E-mail</span>
-                    </header>
-                    <div class="col">
-                        <div class="col-md-6 div-input mx-auto" id="email">
-                            <input type="file" multiple accept=".jpg,.jpeg,.png.gif">
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <button class="col-md-6 btn-login text-center mx-auto">Próximo</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+  <app-progress-bar></app-progress-bar>
+  <div class="login-form row col-md-6">
+    <img src="../../../assets/backgrounds/static_backgrounds/JuditRegister.svg"
+      class="=row col-md-5 position-absolute top-50 start-0 translate-middle" />
+    <div class="col position-relative d-flex align-items-center top-0 start-0">
+      <form class="container mx-auto" [formGroup]="registerUser" (ngSubmit)="onSubmit()">
+        <div *ngIf="sharedService.steps === 1">
+          <header class="
+              col-md-6
+              position-absolute
+              top-0
+              start-50
+              translate-middle-x
+              my-5
+              text-center
+            ">
+            <h1 class="animate__jackInTheBox">
+              Comece a sua jornada no Educo!
+            </h1>
+            <span>Primeiro precisamos do seu endereço do E-mail</span>
+          </header>
+          <div class="col-md-6 mx-auto">
+            <div class="div-input">
+              <span class="position-absolute top-50 start-0 translate-middle-y">Insira o e-mail aqui</span>
+              <input class="text-input" type="text" formControlName="email" required />
+            </div>
+          </div>
+          <ul *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="
+              step1-2
+              col-md-6
+              mt-1
+              position-absolute
+              top-50
+              start-50
+              translate-middle-x
+              text-nowrap
+            ">
+            <li *ngIf="f.email.errors?.pattern || f.email.errors?.required">
+              Insira um endereço de e-mail válido
+            </li>
+          </ul>
+          <div class="container">
+            <div class="row">
+              <button type="button" *ngIf="sharedService.steps === 1" on-click="nextStep()"
+                class="col-md-6 btn-login text-center mx-auto" [disabled]="!f.email.valid">
+                Próximo
+              </button>
+            </div>
+          </div>
         </div>
+
+        <div class="mb-5" *ngIf="sharedService.steps === 2">
+          <header class="col-md-6 mx-auto text-center">
+            <h1>Quando você nasceu?</h1>
+          </header>
+          <div class="col">
+            <div class="col-md-6 div-input mx-auto">
+              <input class="text-input date-format" type="date" formControlName="date" />
+            </div>
+            <ul *ngIf="f.date.invalid && (f.date.dirty || f.date.touched)" class="
+                step1-2
+                col-md-6
+                mt-1
+                position-absolute
+                top-50
+                start-50
+                translate-middle-x
+                text-nowrap
+              ">
+              <li *ngIf="f.date.errors?.required">
+                Solicitamos a sua data de nascimento
+              </li>
+            </ul>
+          </div>
+          <div class="container">
+            <div class="row">
+              <button type="button" *ngIf="sharedService.steps === 2" on-click="nextStep()"
+                class="col-md-6 btn-login text-center mx-auto" [disabled]="!f.date.valid">
+                Próximo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4" *ngIf="sharedService.steps === 3">
+          <header class="col-md-6 mx-auto text-center">
+            <h1>Agora, crie um nome de usuário e uma senha</h1>
+          </header>
+          <div class="col">
+            <div class="col-md-6 div-input mx-auto">
+              <span class="position-absolute top-50 start-0 translate-middle-y">Nome Completo</span>
+              <input class="text-input" type="text" formControlName="name" />
+              <ul *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)" class="
+                  col-md-12
+                  position-absolute
+                  top-50
+                  start-50
+                  translate-middle-x
+                  text-nowrap
+                " style="margin-top: 1.75rem; margin-left: -1rem">
+                <li *ngIf="f.name.errors?.required">Solicitamos um nome</li>
+              </ul>
+            </div>
+            <div class="col-md-6 div-input mx-auto">
+              <span class="position-absolute top-50 start-0 translate-middle-y">Senha</span>
+              <input class="text-input" type="password" formControlName="password" />
+              <ul *ngIf="
+                  f.password.invalid && (f.password.dirty || f.password.touched)
+                " class="
+                  col-md-12
+                  position-absolute
+                  top-50
+                  start-50
+                  translate-middle-x
+                  text-nowrap
+                " style="margin-top: 1.75rem; margin-left: -1rem">
+                <li *ngIf="f.password.errors?.required">
+                  Solicitamos uma senha
+                </li>
+                <li *ngIf="
+                    f.password.errors?.pattern || f.password.errors?.required
+                  ">
+                  A sua senha deve ter 1 letra maiúscula
+                </li>
+                <li *ngIf="
+                    f.password.errors?.pattern || f.password.errors?.required
+                  ">
+                  1 letra minúscula, 1 número e até 8 caracteres
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 div-input mx-auto">
+              <span class="position-absolute top-50 start-0 translate-middle-y">Confirme a Senha</span>
+              <input class="text-input" type="password" appMustMatch="password" formControlName="confirmPassword" />
+              <ul *ngIf="
+                  f.confirmPassword.invalid &&
+                  (f.confirmPassword.dirty || f.confirmPassword.touched)
+                " class="
+                  col-md-12
+                  position-absolute
+                  top-50
+                  start-50
+                  translate-middle-x
+                  text-nowrap
+                " style="margin-top: 1.75rem; margin-left: -1rem">
+                <li *ngIf="f.confirmPassword.errors?.required">
+                  Confirme sua senha
+                </li>
+                <li *ngIf="
+                    f.confirmPassword.touched &&
+                    f.confirmPassword.errors?.notEqual
+                  ">
+                  Senha não corresponde
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <button type="button" *ngIf="sharedService.steps === 3" on-click="nextStep()"
+                class="col-md-6 btn-login text-center mx-auto" [disabled]="
+                  !(f.name.valid && f.password.valid && f.confirmPassword.valid)
+                ">
+                Próximo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="sharedService.steps === 4">
+          <header class="col-md-6 mx-auto mb-5 text-center">
+            <h1>Seja bem vindo a plataforma Educo :)</h1>
+          </header>
+          <div class="container">
+            <div class="row">
+              <button type="submit" *ngIf="sharedService.steps === 4" class="col-md-6 btn-login text-center mx-auto">
+                Entrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
 </main>

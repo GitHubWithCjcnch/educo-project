@@ -1,32 +1,38 @@
-<div>
-    <div 
-        class="progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
+<div class="container">
+    <div class="exitButton">
+        <a (click)="exitSignUp()">
+            <svg version="1.1" id="Layer_1"
+        	    xmlns="http://www.w3.org/2000/svg"
+        	    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+        	    <path fill="#3da9fc" d="M40.3,19.2L32,27.5l-8.3-8.3l-4.5,4.5l8.3,8.3l-8.3,8.3l4.5,4.5l8.3-8.3l8.3,8.3l4.5-4.5L36.5,32l8.3-8.3
+        	    L40.3,19.2z M32,0C14.3,0,0,14.3,0,32s14.3,32,32,32s32-14.3,32-32S49.7,0,32,0z M32,57.6C17.9,57.6,6.4,46.1,6.4,32
+        	    S17.9,6.4,32,6.4S57.6,17.9,57.6,32S46.1,57.6,32,57.6z"/>
+            </svg>
+        </a>
+    </div>
+    <div
+        class="colorProgress progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
         *ngIf="sharedService.steps === 1"
+
     >
         <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <div 
-        class="progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
+    <div
+        class="colorProgress progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
         *ngIf="sharedService.steps === 2"
     >
-        <div class="progress-bar progress-25" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-25" role="progressbar" style="width: 33%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <div 
-        class="progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
+    <div
+        class="colorProgress progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
         *ngIf="sharedService.steps === 3"
     >
-        <div class="progress-bar progress-50" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-33" role="progressbar" style="width: 70%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    <div 
-        class="progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
+    <div
+        class="colorProgress progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
         *ngIf="sharedService.steps === 4"
     >
-        <div class="progress-bar progress-75" role="progressbar" style="width: 75%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    <div 
-        class="progress position-absolute top-0 start-50 translate-middle-x my-5 col-md-7"
-        *ngIf="sharedService.steps === 5"
-    >
-        <div class="progress-bar progress-100" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-70" role="progressbar" style="width: 100%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 </div>
