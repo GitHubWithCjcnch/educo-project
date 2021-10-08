@@ -12,21 +12,23 @@ import { StatusService } from '../../services/status.service'
 export class signInPageComponent  {
   status: boolean = false;
   loginForm = new FormGroup ({
-    email: new FormControl(''),
-    password: new FormControl('')
-  })
+  email: new FormControl(''),
+  password: new FormControl(''),
 
+  })
+  token = {};
+  statusToken = false
   constructor(
       private myElement: ElementRef,
       private service: StatusService
-    ) { 
+
+
+    ) {
     this.myElement.nativeElement
+
   }
 
-  
   onSubmit() {
-    this.service.authenticationUser(this.loginForm.value.email, this.loginForm.value.password);
-    console.warn(this.loginForm.value)
+    this.service.authenticationUser(this.loginForm.value.email, this.loginForm.value.password)
   }
-  
 }
