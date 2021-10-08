@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { StatusService } from '../../services/status.service'
 
 @Component({
@@ -6,7 +6,7 @@ import { StatusService } from '../../services/status.service'
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.scss']
 })
-export class PrincipalComponent implements OnInit {
+export class PrincipalComponent implements OnInit, AfterViewInit {
   constructor(
     public service: StatusService,
     ) {
@@ -16,7 +16,11 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
     //console.log(this.service.token)
     //console.log(this.service.userId)
-    this.service.getUserById(this.service.userId)
   }
+  ngAfterViewInit(): void{
+    this.service.getUserById(this.service.userId)
+    console.log(this.service.user)
+  }
+
 
 }

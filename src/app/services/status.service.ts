@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { NumberValueAccessor } from '@angular/forms';
 
 const baseUrl = 'http://localhost:3333'
 @Injectable({
@@ -9,9 +10,10 @@ const baseUrl = 'http://localhost:3333'
 
 export class StatusService {
   statusToken: boolean | undefined
-  token: any | undefined
-  userId: any | undefined
+  token: any
+  userId: any
   user: any
+  localImage: number | undefined
   constructor(private api: HttpClient,
     private router: Router,
     ) {
@@ -44,12 +46,18 @@ export class StatusService {
   }
   getUserById(id: string){
     return this.api.get(baseUrl+'/users/by_id/'+id).subscribe(res => {
-      var resjson = JSON.stringify(res)
+      const resjson = JSON.stringify(res)
       this.user = JSON.parse(resjson)
       //console.log(this.user.avatar)
     },
     (err) => console.log(err))
   }
-
+  getImageById(imageId: number){
+    return this.api.get(baseUrl+'/images/by_id/'+imageId).subscribe(res =>{
+      const resjson = JSON.stringify(res)
+      this.localImage = JSON.parse(resjson).local
+    },
+    (err) => console.log(err))
+  }
 
 }

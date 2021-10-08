@@ -12,6 +12,7 @@ export class GetIdPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getIdUserByToken(this.service.token)
+
   }
 
 }
