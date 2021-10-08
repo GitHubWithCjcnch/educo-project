@@ -13,6 +13,8 @@ import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component
 import { ProgressBarComponent } from './utilitiesComponents/progress-bar/progress-bar.component';
 import { MustMatchDirective } from './directives/must-match.directive';
 import { AddProfilePictureComponent } from './utilitiesComponents/add-profile-picture/add-profile-picture.component';
+import { PrincipalComponent } from './pages/principal/principal.component';
+import { GetIdPageComponent } from './pages/get-id-page/get-id-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AddProfilePictureComponent } from './utilitiesComponents/add-profile-pi
     SignUpPageComponent,
     ProgressBarComponent,
     MustMatchDirective,
-    AddProfilePictureComponent
+    AddProfilePictureComponent,
+    PrincipalComponent,
+    GetIdPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { AddProfilePictureComponent } from './utilitiesComponents/add-profile-pi
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [signInPageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

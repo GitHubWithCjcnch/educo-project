@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { StatusService } from './services/status.service';
 
 @Component({
   selector: 'app-root',
