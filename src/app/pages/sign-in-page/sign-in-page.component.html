@@ -35,13 +35,15 @@
           <input type="text" formControlName="password" style="-webkit-text-security: disc" />
         </div>
         <div class="container">
-          <div class="row gap-3">
+          <div class="row gap-5">
             <button class="col-md-6 btn-login text-center mx-auto" type="submit" [disabled]="!loginForm.valid">
               Entrar
             </button>
-            <a class="col-8 my-auto" style="font-family: 'Righteous-Regular'">Esqueceu a Senha?</a>
-            <a routerLink="/signup" class="col my-auto" style="font-family: 'Righteous-Regular'">Não tem uma conta
-              ainda?</a>
+            <div class="row mx-auto">
+              <a class="col-md-6" style="font-family: 'Righteous-Regular'">Esqueceu a Senha?</a>
+              <a routerLink="/signup" class="col-md-6" style="font-family: 'Righteous-Regular'">Não tem uma conta
+                ainda?</a>
+            </div>
           </div>
         </div>
         <img src="../../../assets/backgrounds/animated_backgrounds/CupCoffee_animated.svg"
@@ -49,7 +51,7 @@
           style="pointer-events: none; user-select: none" />
       </form>
     </div>
-    <div class="col position-relative" style="background-color: #57555c !important; width: 700px">
+    <div class="container-image col">
       <img class="
           w-100
           img-fluid
