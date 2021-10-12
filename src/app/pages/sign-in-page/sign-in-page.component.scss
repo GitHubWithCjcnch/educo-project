@@ -15,8 +15,12 @@ input {
   background: none;
   padding: 0.5rem 3rem;
 }
-
-
+.container-image  {
+  position: relative;
+  width: 700px;
+  border-radius: 0 0.5em 0.5em 0;
+  background-color: #57555c;
+}
 a {
   display: block;
   text-decoration: none !important;
@@ -76,6 +80,12 @@ a:hover {
 .btn-login:hover {
   box-shadow: 8px 3px black;
   color: black;
+}
+
+@media screen and (max-width: 1300px) {
+  .container-image {
+    display: none;
+  }
 }
 
 /* ----------------------------------------------
