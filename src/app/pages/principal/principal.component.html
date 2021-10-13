@@ -1,2 +1,4 @@
-<li>{{this.service.user}}</li>
-<li>{{this.service.user}}</li>
+<div *ngIf="this.service.user">
+  <li>{{this.service.user.id}}</li>
+  <li>{{this.service.user.name}}</li>
+</div>

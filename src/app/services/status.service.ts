@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { NumberValueAccessor } from '@angular/forms';
 
 const baseUrl = 'http://localhost:3333'
 @Injectable({
