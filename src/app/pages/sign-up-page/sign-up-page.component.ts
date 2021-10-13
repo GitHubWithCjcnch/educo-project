@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedServiceService } from 'src/app/services/shared-service.service';
 import { StatusService } from 'src/app/services/status.service';
@@ -9,8 +9,25 @@ import { StatusService } from 'src/app/services/status.service';
   styleUrls: ['./sign-up-page.component.scss']
 })
 
-export class SignUpPageComponent implements OnInit {
-  @ViewChild('imageProfile') imageProfile!: ElementRef;
+export class SignUpPageComponent {
+  divInput: ElementRef | undefined
+  constructor(
+    public sharedService: SharedServiceService,
+    private service: StatusService
+  ) {}
+
+  focusInput(event: Event) {
+    const targetElement: any = event.target as Element
+    const parentNodeChilds: any = (event.target as Element).parentNode?.childNodes;
+    if(parentNodeChilds[0].localName === 'span') {
+      parentNodeChilds[0].classList.add('onFocus')
+    }
+    event.target?.addEventListener('blur', () => {
+      if (targetElement.value == "") {
+        parentNodeChilds[0].classList.remove('onFocus')
+      }
+    })
+  }
 
   registerUser = new FormGroup({
     email: new FormControl('', [
@@ -31,14 +48,6 @@ export class SignUpPageComponent implements OnInit {
       Validators.required
     ])
   });
-
-  constructor(
-    public sharedService: SharedServiceService,
-    private service: StatusService
-  ) {}
-
-  ngOnInit(): void {
-  }
 
   nextStep() {
     this.sharedService.steps += 1;

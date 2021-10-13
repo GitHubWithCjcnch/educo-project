@@ -53,6 +53,7 @@ header {
   font-size: 15px;
   letter-spacing: 1px;
   color: #999;
+  transition: all .3s;
 }
 
 ul {
@@ -86,10 +87,11 @@ ul {
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-  min-height: 625px;
+  min-height: 750px;
   background-color: #fffffe;
   border-radius: 0.5em;
   box-shadow: 0 1px 5px 0 #fffffe;
+  margin-top: 30px;
   animation: slide-top 1s both;
 }
 
@@ -101,7 +103,7 @@ div.login-form > img {
 .div-input {
   position: relative;
   height: 45px;
-  margin: 40px 0 50px 0;
+  margin-bottom: 60px;
   border-bottom: 2px solid #d9d9d9;
 }
 

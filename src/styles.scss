@@ -23,7 +23,7 @@ html, body {
 html::-webkit-scrollbar{
     width: 16px;
 }
-  
+
 html::-webkit-scrollbar-track {
     border-left: 8px solid #094067;
     border-right: 8px solid #094067;
@@ -42,8 +42,14 @@ html::-webkit-scrollbar-thumb {
 }
 
 .main-container {
-    position: fixed;
-    background: url('./assets/backgrounds/animated_backgrounds/LoginFormBackground_animated.svg') no-repeat;
-    background-size: cover;
-    overflow-y: auto;
+  position: fixed;
+  background: url('./assets/backgrounds/animated_backgrounds/LoginFormBackground_animated.svg') no-repeat;
+  background-size: cover;
+  overflow-y: auto;
+}
+
+.onFocus {
+  color:#349afa !important;
+  top: -5px !important;
+  font-size: xx-small !important;
 }
