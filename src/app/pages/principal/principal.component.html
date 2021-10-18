@@ -2,3 +2,9 @@
   <li>{{this.service.user.id}}</li>
   <li>{{this.service.user.name}}</li>
 </div>
+<div *ngIf="this.service.groups">
+  <button *ngFor="let group of this.service.groups; index as i;"
+   class="btnGroups" on-click="getButton(this.service.groups[i].id)">{{this.service.groups[i].imageId}}</button>
+</div>
+<script>
+</script>
