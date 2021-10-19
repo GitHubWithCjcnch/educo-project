@@ -15,6 +15,7 @@ export class StatusService {
   user: any
   localImage: number | undefined
   groups: any
+  posts: any
   public socket: Socket = io('http://localhost:3333')
 
   constructor(private http: HttpClient,

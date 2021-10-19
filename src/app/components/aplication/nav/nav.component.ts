@@ -8,7 +8,7 @@ import { StatusService } from 'src/app/services/status.service';
 })
 export class NavComponent implements OnInit {
   group: boolean = false;
-  posts: Array<Object> = []
+
   constructor(public service: StatusService) { }
 
   ngOnInit(): void {
@@ -32,12 +32,12 @@ export class NavComponent implements OnInit {
   }
   showGroup(value: number) {
     let clickedGroup = value
-    console.log(typeof clickedGroup)
     this.group = true;
-    this.service.getPostsByGroup(clickedGroup).subscribe(res => {
+    this.service.getPostsByGroup(clickedGroup).pipe().subscribe(res => {
       const resjson = JSON.stringify(res)
-      this.posts = JSON.parse(resjson)
-      console.log(this.posts)
+      this.service.posts = JSON.parse(resjson)
+
+      console.log(this.service.posts)
     })
 
   }

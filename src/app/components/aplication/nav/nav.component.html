@@ -5,7 +5,7 @@
   <button (click)="showGroup(this.service.groups[i].id)" *ngFor="let group of this.service.groups; index as i;"
    class="btnGroups">{{this.service.groups[i].id}}</button>
   <div *ngIf="group">
-    <div *ngFor="let post of this.posts; index as p">{{this.posts}}</div>
+    <div *ngFor="let post of this.service.posts; index as k">{{this.service.posts[k].text}}</div>
     <input type="text">
   </div>
 </div>
