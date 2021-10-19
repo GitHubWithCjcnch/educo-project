@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { StatusService } from '../../services/status.service';
 
 @Component({
   selector: 'app-principal',
@@ -7,17 +6,7 @@ import { StatusService } from '../../services/status.service';
   styleUrls: ['./principal.component.scss']
 })
 export class PrincipalComponent implements OnInit {
-  constructor(
-    public service: StatusService
-    ) {
+  constructor() {
    }
-
-
-
-  ngOnInit(): void {
-    this.service.getUserById(this.service.userId)
-
-  }
-
-
+  ngOnInit(): void {}
 }

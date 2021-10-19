@@ -54,7 +54,7 @@ export class SignUpPageComponent {
   }
 
   onSubmit() {
-    this.service.createUser(this.registerUser.value.email, this.registerUser.value.name, this.registerUser.value.password)
+    this.service.createUser(this.registerUser.value.email, this.registerUser.value.name, this.registerUser.value.password, this.registerUser.value.date)
   }
 
 
