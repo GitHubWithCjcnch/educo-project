@@ -8,6 +8,7 @@ import { StatusService } from 'src/app/services/status.service';
 })
 export class NavComponent implements OnInit {
   group: boolean = false;
+  clickedGroup!: number;
 
   constructor(public service: StatusService) { }
 
@@ -22,23 +23,27 @@ export class NavComponent implements OnInit {
       const resjson = JSON.stringify(res)
       const groups = JSON.parse(resjson)
       let a: Array<Object> = []
-      console.log(groups)
       for(let group = 0; group < groups.length; group++){
         a.push(groups[group][0])
       }
       this.service.groups = a
     })
-
   }
+
   showGroup(value: number) {
-    let clickedGroup = value
+    this.clickedGroup = value
     this.group = true;
-    this.service.getPostsByGroup(clickedGroup).pipe().subscribe(res => {
+    this.service.getPostsByGroup(this.clickedGroup).pipe().subscribe(res => {
       const resjson = JSON.stringify(res)
       this.service.posts = JSON.parse(resjson)
-
-      console.log(this.service.posts)
     })
+  }
 
+  onKeyDown(event: any) {
+    let text = event.target.value;
+    if (text !== "") {
+      this.service.makePosts(this.service.userId, text, this.clickedGroup).subscribe(res => res)
+    }
+    text = null;
   }
 }
