@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { io, Socket } from 'socket.io-client';
 
 const baseUrl = 'http://localhost:3333'
 @Injectable({
@@ -13,13 +14,22 @@ export class StatusService {
   userId: any
   user: any
   localImage: number | undefined
-  constructor(private http: HttpClient, private router: Router) {}
+  groups: any
+  public socket: Socket = io('http://localhost:3333')
 
-  createUser( email: string, name: string, password: string, birth: string ) {
+  constructor(private http: HttpClient,
+    private router: Router,
+    ) {
+      this.socket.on('broadcast', data=>{
+        console.log(data)
+      })
+   }
+
+   createUser( email: string, name: string, password: string, birth: string ) {
     return this.http.post(baseUrl+'/users', { email, name, password, birth}).subscribe(res => alert(res), (err) => alert(err));
   }
   authenticationUser( email: string, password: string ){
-    const auth = this.http.post(baseUrl+'/sessions', {email, password}).subscribe(res => {
+    const auth = this.http.post(baseUrl+'/sessions', {email, password}).subscribe((res: any) => {
       var resjson = JSON.stringify(res)
       this.token = JSON.parse(resjson)
       this.statusToken = true
@@ -40,12 +50,7 @@ export class StatusService {
     })
   }
   getUserById(id: string){
-    return this.http.get(baseUrl+'/users/by_id/'+id).subscribe(res => {
-      const resjson = JSON.stringify(res)
-      this.user = JSON.parse(resjson)
-      //console.log(this.user.avatar)
-    },
-    (err) => console.log(err))
+    return this.http.get(baseUrl+'/users/by_id/'+id)
   }
   getImageById(imageId: number){
     return this.http.get(baseUrl+'/images/by_id/'+imageId).subscribe(res =>{
@@ -53,6 +58,9 @@ export class StatusService {
       this.localImage = JSON.parse(resjson).local
     },
     (err) => console.log(err))
+  }
+  getGroupsByUserId(userId: string){
+    return this.http.get(baseUrl+'/groups/'+userId)
   }
 
 }
