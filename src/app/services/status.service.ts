@@ -62,5 +62,8 @@ export class StatusService {
   getGroupsByUserId(userId: string){
     return this.http.get(baseUrl+'/groups/'+userId)
   }
+  getPostsByGroup(groupId: any){
+    return this.http.get(baseUrl+'/posts/by_group/'+groupId)
+  }
 
 }

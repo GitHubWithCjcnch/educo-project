@@ -1,4 +1,11 @@
+<div *ngIf="this.service.user">
+  <li>{{this.service.user.id}}</li>
+</div>
 <div *ngIf="this.service.groups">
-  <button *ngFor="let group of this.service.groups; index as i;"
-   class="btnGroups" on-click="getButton(this.service.groups[i].id)">{{this.service.groups[i].imageId}}</button>
+  <button (click)="showGroup(this.service.groups[i].id)" *ngFor="let group of this.service.groups; index as i;"
+   class="btnGroups">{{this.service.groups[i].id}}</button>
+  <div *ngIf="group">
+    <div *ngFor="let post of this.posts; index as p">{{this.posts}}</div>
+    <input type="text">
+  </div>
 </div>
