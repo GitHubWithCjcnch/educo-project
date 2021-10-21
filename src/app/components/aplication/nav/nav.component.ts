@@ -30,6 +30,11 @@ export class NavComponent implements OnInit {
     })
   }
 
+  groupOnFocus(event: any) {
+    const elementClicked: Element = event.target;
+    elementClicked.classList.add('group-on-focus')
+  }
+
   showGroup(value: number) {
     this.clickedGroup = value
     this.group = true;

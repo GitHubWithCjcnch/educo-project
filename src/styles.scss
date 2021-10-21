@@ -53,3 +53,7 @@ html::-webkit-scrollbar-thumb {
   top: -5px !important;
   font-size: xx-small !important;
 }
+
+.not-clickable {
+  pointer-events: none;
+}

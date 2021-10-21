@@ -1,3 +1,29 @@
-button {
+.group {
+  width: 48px;
+  height: 48px;
+  background-color: lightgray;
+  border-radius: 1em;
+  transition: .3s all;
+}
 
+.group:hover {
+  cursor: pointer;
+  background-color: #349AFA !important;
+  box-shadow: 3px 2px black;
+}
+
+.group-on-focus {
+  background-color: #349AFA !important;
+  box-shadow: 3px 2px black;
+}
+
+.first-letter {
+  display:block;
+  font-size: 0;
+  margin-bottom: 15px;
+}
+
+.first-letter::first-letter {
+  visibility:visible;
+  font-size: x-large;
 }
