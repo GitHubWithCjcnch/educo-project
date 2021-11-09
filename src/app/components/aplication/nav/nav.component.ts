@@ -24,7 +24,7 @@ export class NavComponent implements OnInit {
       const groups = JSON.parse(resjson)
       let a: Array<Object> = []
       for(let group = 0; group < groups.length; group++){
-        a.push(groups[group][0])
+        a.push(groups[group])
       }
       this.service.groups = a
     })

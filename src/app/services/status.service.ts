@@ -30,7 +30,7 @@ export class StatusService {
     return this.http.post(baseUrl+'/users', { email, name, password, birth}).subscribe(res => alert(res), (err) => alert(err));
   }
   authenticationUser( email: string, password: string ){
-    const auth = this.http.post(baseUrl+'/sessions', {email, password}).subscribe((res: any) => {
+    const auth = this.http.post(baseUrl+'/sessions', {email, password}).subscribe(res => {
       var resjson = JSON.stringify(res)
       this.token = JSON.parse(resjson)
       this.statusToken = true
@@ -46,7 +46,8 @@ export class StatusService {
     })
     return this.http.get(baseUrl+'/sessions', {headers: headers}).subscribe(res => {
       var resjson = JSON.stringify(res)
-      this.userId = JSON.parse(resjson).id
+      this.user = JSON.parse(resjson)
+      this.userId = this.user.id
       this.router.navigateByUrl('/principal');
     })
   }
