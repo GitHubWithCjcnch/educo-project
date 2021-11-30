@@ -1,61 +1,48 @@
 header {
-    max-height: 4.5rem;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+  max-height: 4.5rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 header .container-img {
-    margin-bottom: 7px;
-    margin-top: 7px;
+  margin-bottom: 7px;
+  margin-top: 7px;
 }
 
 header .container-img img {
-    height: 3.5rem;
+  height: 3.5rem;
 }
 
 .nav-41rtp {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .nav-41rtp ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 3px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 3px;
 }
 
 .nav-41rtp ul li {
-    display: inline-block;
-    white-space: nowrap;
-    margin-left: 30px;
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 30px;
 }
 
 .nav-41rtp ul li a {
-    display: block;
-    font-family: 'Trebuchet MS', sans-serif;
-    color: #fffffe;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-decoration: none;
-    outline: none;
-    transition: 0.3s;
-    
-}
-
-.nav-41rtp ul li a:hover {
-    color: #3da9fc;
+  color: #fffffe;
 }
 
 .separator {
-    width: 2px;
-    height: 30px;
-    background-color: #fffffe;
+  width: 2px;
+  height: 30px;
+  background-color: #fffffe;
 }

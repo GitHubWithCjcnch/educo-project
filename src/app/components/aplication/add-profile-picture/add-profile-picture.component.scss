@@ -1,15 +1,14 @@
 div.backgroundDefault {
   width: 130px;
   height: 130px;
-  background: url('../../../assets/icons/account_circle_black_24dp.svg') no-repeat center /cover;
+  ///background: url('../../../assets/icons/account_circle_black_24dp.svg') no-repeat center /cover;
   margin-bottom: 1.5rem;
 }
 
 label[for="add-image"] {
   width: 48px;
   height: 48px;
-
-  background: url('../../../assets/icons/add_circle_black_24dp.svg') no-repeat;
+  //background: url('../../../assets/icons/add_circle_black_24dp.svg') no-repeat;
   cursor: pointer;
 }
 

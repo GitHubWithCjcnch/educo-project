@@ -18,15 +18,20 @@ export class StatusService {
   posts: any
   public socket: Socket = io('http://localhost:3333')
 
-  constructor(private http: HttpClient,
-    private router: Router,
-    ) {
-      this.socket.on('broadcast', data=>{
-        console.log(data)
-      })
-   }
+  constructor(private http: HttpClient, private router: Router,) {
+    this.socket.on('broadcast', data=>{
+      console.log(data)
+    })
+  }
+  getHeaderBearerToken(token: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
+    return headers;
+  }
 
-   createUser( email: string, name: string, password: string, birth: string ) {
+  createUser( email: string, name: string, password: string, birth: string ) {
     return this.http.post(baseUrl+'/users', { email, name, password, birth}).subscribe(res => alert(res), (err) => alert(err));
   }
   authenticationUser( email: string, password: string ){
@@ -40,10 +45,7 @@ export class StatusService {
     return auth
   }
   getIdUserByToken(token: string ){
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    })
+    const headers = this.getHeaderBearerToken(token)
     return this.http.get(baseUrl+'/sessions', {headers: headers}).subscribe(res => {
       var resjson = JSON.stringify(res)
       this.user = JSON.parse(resjson)
@@ -51,23 +53,28 @@ export class StatusService {
       this.router.navigateByUrl('/principal');
     })
   }
-  getUserById(id: string){
-    return this.http.get(baseUrl+'/users/by_id/'+id)
+  getUserById(id: string, token: string){
+    const headers = this.getHeaderBearerToken(token)
+    return this.http.get(baseUrl+'/users/by_id/'+id, {headers: headers})
   }
-  getImageById(imageId: number){
-    return this.http.get(baseUrl+'/images/by_id/'+imageId).subscribe(res =>{
+  getImageById(imageId: number, token: string){
+    const headers = this.getHeaderBearerToken(token)
+    return this.http.get(baseUrl+'/images/by_id/'+imageId, {headers: headers}).subscribe(res =>{
       const resjson = JSON.stringify(res)
       this.localImage = JSON.parse(resjson).local
     },
     (err) => console.log(err))
   }
-  getGroupsByUserId(userId: string){
-    return this.http.get(baseUrl+'/groups/'+userId)
+  getGroupsByUserId(userId: string, token: string){
+    const headers = this.getHeaderBearerToken(token)
+    return this.http.get(baseUrl+'/groups/'+userId, {headers: headers})
   }
-  getPostsByGroup(groupId: any){
-    return this.http.post(baseUrl+'/posts/by_group/'+groupId, {})
+  getPostsByGroup(groupId: any, token: string){
+    const headers = this.getHeaderBearerToken(token)
+    return this.http.post(baseUrl+'/posts/by_group/'+groupId, {}, {headers: headers})
   }
-  makePosts(userId: string, text: string, groupId: number) {
-    return this.http.post(baseUrl+'/posts', {userId, text, groupId});
+  makePosts(userId: string, text: string, groupId: number, token: string) {
+    const headers = this.getHeaderBearerToken(token)
+    return this.http.post(baseUrl+'/posts', {userId, text, groupId}, {headers: headers});
   }
 }

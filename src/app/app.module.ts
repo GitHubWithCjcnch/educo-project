@@ -15,7 +15,6 @@ import { MustMatchDirective } from './directives/must-match.directive';
 import { AddProfilePictureComponent } from './components/aplication/add-profile-picture/add-profile-picture.component';
 import { PrincipalComponent } from './pages/aplication/principal/principal.component';
 import { GetIdPageComponent } from './pages/aplication/get-id-page/get-id-page.component';
-import { NavComponent } from './components/aplication/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { NavComponent } from './components/aplication/nav/nav.component';
     MustMatchDirective,
     AddProfilePictureComponent,
     PrincipalComponent,
-    GetIdPageComponent,
-    NavComponent
+    GetIdPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,36 @@
-.sidebar {
-  width: 15%;
-  height: 675px;
-  margin-top: 64px !important;
-  border-radius: 3em;
-  word-break: break-word;
-  background: #3da9fc;
+.view-height {
+  height: 80vh !important;
 }
 
-.sidebar ul {
-  font-weight: 600;
-  color: #041e31;
+.bioOverflow {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+.container-background-blue {
+  background-color: #d8eefe !important;
+}
+.container-perfil-rounded {
+  border-top-right-radius: 3em;
+}
+.container-message-rounded {
+  background-color: red;
+  border-top-right-radius: 3em;
+  border-top-left-radius: 3em;
+}
+.container-friends-rounded {
+  border-top-left-radius: 3em;
 }
 
-.container-chat {
-  margin-top: 64px !important;
-  border-radius: 3em;
+.text-color-dark-blue {
+  color: #094067;
+}
+.text-color-gray {
+  color: #5f6c7b;
 }
 
-.thumbnail-user {
-  width: 120px;
-  height: 120px;
+ul {
+  padding: 0 !important;
+  list-style-type: none;
 }

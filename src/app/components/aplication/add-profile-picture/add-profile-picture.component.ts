@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AzureBlobStorageService } from 'src/app/services/azure-blob-storage.service';
 
 @Component({
   selector: 'app-add-profile-picture',
@@ -9,9 +8,8 @@ import { AzureBlobStorageService } from 'src/app/services/azure-blob-storage.ser
 export class AddProfilePictureComponent implements OnInit {
   @ViewChild('imageProfile') imageProfile!: ElementRef;
   fileToUpload!: File;
-  sas = "sp=racwdl&st=2021-09-29T01:26:48Z&se=2022-12-29T09:26:48Z&spr=https&sv=2020-08-04&sr=c&sig=4WzDnYBG79t9AKNgoIPVbs9J0yxOEcuWYOBbizkIzoY%3D";
 
-  constructor(private blobService: AzureBlobStorageService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -36,11 +34,4 @@ export class AddProfilePictureComponent implements OnInit {
       return false
     }
   }
-
-  uploadFileAzure() {
-    if (this.fileToUpload) {
-      this.blobService.uploadImage(this.sas, this.fileToUpload, "cu")
-    }
-  }
-
 }

@@ -2,43 +2,43 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 @font-face {
-    font-family: 'Righteous-Regular';
-    src: url("./assets/fonts/Righteous-Regular.ttf");
+  font-family: 'Righteous-Regular';
+  src: url("./assets/fonts/Righteous-Regular.ttf");
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html, body {
-    min-height: 100vh;
-    height: auto;
-    margin: 0;
-    overflow-x: hidden;
-    overflow: overlay;
+  min-height: 100vh;
+  height: auto;
+  margin: 0;
+  overflow-x: hidden;
+  overflow: overlay;
 }
 
 html::-webkit-scrollbar{
-    width: 16px;
+  width: 16px;
 }
 
 html::-webkit-scrollbar-track {
-    border-left: 8px solid #094067;
-    border-right: 8px solid #094067;
+  border-left: 8px solid #094067;
+  border-right: 8px solid #094067;
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #ef4565;
-    border-left: 4px solid #094067;
-    border-right: 4px solid #094067;
-    border-bottom: 4px solid #094067;
-    border-top: 4px solid #094067;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+  background: #ef4565;
+  border-left: 4px solid #094067;
+  border-right: 4px solid #094067;
+  border-bottom: 4px solid #094067;
+  border-top: 4px solid #094067;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .main-container {
@@ -56,4 +56,19 @@ html::-webkit-scrollbar-thumb {
 
 .not-clickable {
   pointer-events: none;
+}
+
+.text-hover-link {
+  cursor: pointer;
+  display: block;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  outline: none;
+  transition: 0.3s all;
+}
+.text-hover-link:hover {
+  color: #3da9fc !important;
 }
