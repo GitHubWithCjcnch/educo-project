@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { StatusService } from 'src/app/services/status.service';
 
 @Component({
@@ -6,15 +6,13 @@ import { StatusService } from 'src/app/services/status.service';
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.scss']
 })
-export class PrincipalComponent {
-  group: boolean = false;
+export class PrincipalComponent implements OnInit, AfterViewInit {
+  groupState: boolean = false;
   clickedGroup!: number;
 
-  constructor(public service: StatusService) { }
+  constructor(public service: StatusService, private el: ElementRef) { }
 
   ngOnInit(): void {
-    console.log(this.service.user)
-
     this.service.getUserById(this.service.userId, this.service.token).subscribe(res => {
       const resjson = JSON.stringify(res)
       this.service.user = JSON.parse(resjson)
@@ -28,8 +26,13 @@ export class PrincipalComponent {
       for(let group = 0; group < groups.length; group++){
         a.push(groups[group])
       }
-      this.service.groups = a
+      this.service.groups = a;
     })
+  }
+
+  ngAfterViewInit() {
+    this.el.nativeElement.ownerDocument
+    .body.style.backgroundColor = '#094067';
   }
 
   ageFromBirth(date: Date) {
@@ -44,13 +47,12 @@ export class PrincipalComponent {
 
   showGroup(value: number) {
     this.clickedGroup = value
-    this.group = true;
+    this.groupState = true;
     this.service.getPostsByGroup(this.clickedGroup, this.service.token).pipe().subscribe(res => {
       const resjson = JSON.stringify(res)
       this.service.posts = JSON.parse(resjson)
     })
   }
-
 
   onKeyDown(event: any) {
 

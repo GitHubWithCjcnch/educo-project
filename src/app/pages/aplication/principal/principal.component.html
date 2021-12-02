@@ -11,12 +11,12 @@
   <div class="row">
     <div class="col">
       <nav class="navbar navbar-expand-lg" *ngIf="this.service.groups">
-        <div class="container-fluid mb-5">
+        <div class="container-fluid" style="margin-bottom: 1.85em;">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-4">
             <li class="group d-flex justify-content-center align-items-center nav-item" (click)="showGroup(this.service.groups[i].id); groupOnFocus($event)" *ngFor="let group of this.service.groups; index as i;">
-              <span class="btn btn-danger">{{this.service.groups[i].nome}}</span>
+              <span class="button-group">{{this.service.groups[i].nome[0].toUpperCase()}}{{this.service.groups[i].nome[1].toUpperCase()}}</span>
             </li>
-            <li class="group d-flex justify-content-center align-items-center nav-item" (click)="groupOnFocus($event)">
+            <li class="button-group d-flex justify-content-center align-items-center nav-item" (click)="groupOnFocus($event)">
               <svg class="not-clickable" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                 <path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
               </svg>
@@ -51,9 +51,13 @@
       </div>
       <div class="col-8 container-message-rounded position-relative">
         <div class="">
-          <div class="groups" *ngIf="group">
-            <div *ngFor="let post of this.service.posts; index as k">
-              {{this.service.posts[k].text}}
+          <div class="groups" *ngIf="groupState">
+            <div class="message-post d-flex justify-content-between px-5 py-2 text-start text-wrap" *ngFor="let post of this.service.posts; index as k">
+              <img class="perfil-user-post mb-auto thumbnail-user rounded rounded-circle" src="../../../../assets/imagemcu.jpg" alt="">
+              <div class="d-flex flex-column gap-3 me-auto ms-4">
+                <span class="text-user">{{this.service.user.name}}</span>
+                <span class="text-message">{{this.service.posts[k].text}}</span>
+              </div>
             </div>
             <div class="input-group w-75 mb-4 position-absolute bottom-0 start-50 translate-middle-x">
               <input class="form-control" (keydown.enter)="onKeyDown($event)" type="text">
