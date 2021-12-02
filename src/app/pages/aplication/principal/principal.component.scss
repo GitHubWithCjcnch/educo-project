@@ -2,6 +2,48 @@
   height: 80vh !important;
 }
 
+.groups {
+  padding-top: 25px;
+}
+.message-post {
+  color: #fffffe;
+}
+.message-post:hover {
+  background-color: #051f31;
+}
+.perfil-user-post {
+  width: 50px;
+  height: 50px;
+}
+.text-user {
+  font-weight: 500;
+  color: #3da9fc;
+}
+.text-message {
+  overflow-wrap: anywhere;
+  color: #fffffe;
+}
+
+.button-group {
+  position: relative;
+  padding: 16px 25px;
+  font-size: medium;
+  font-family: "Righteous-Regular";
+  font-weight: 500;
+  border-radius: 1em;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: #349afa;
+  transition: 0.4s;
+}
+
+.button-group:hover {
+  box-shadow: 8px 3px black;
+  color: black;
+}
+
 .bioOverflow {
   display: -webkit-box;
   overflow: hidden;
@@ -12,14 +54,15 @@
   background-color: #d8eefe !important;
 }
 .container-perfil-rounded {
+  box-shadow: 12px 0 black;
   border-top-right-radius: 3em;
 }
 .container-message-rounded {
-  background-color: red;
   border-top-right-radius: 3em;
   border-top-left-radius: 3em;
 }
 .container-friends-rounded {
+  box-shadow: -12px 0 black;
   border-top-left-radius: 3em;
 }
 
@@ -34,3 +77,4 @@ ul {
   padding: 0 !important;
   list-style-type: none;
 }
+
